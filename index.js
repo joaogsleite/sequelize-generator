@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 
 const { readConfigFile, render } = require('./utils')
 
-const folderPath = process.argv[2]
+const FOLDER_PATH = process.argv[2]
 
 function handleTable({ tableName, modelName, fields, relations, otherTables }) {
   const modelImports = ''
@@ -46,12 +47,12 @@ function handleTable({ tableName, modelName, fields, relations, otherTables }) {
     }
   })
   const data = { tableName, fields, relations, modelName, modelImports, schema, associations, toJsonMethod }
-  render('Model.js', data, folderPath, `${modelName}.js`)
-  render('Model.d.ts', data, folderPath, `${modelName}.d.ts`)
+  render('Model.js', data, FOLDER_PATH, `${modelName}.js`)
+  render('Model.d.ts', data, FOLDER_PATH, `${modelName}.d.ts`)
 }
 
 async function main() {
-  const config = await readConfigFile(folderPath)
+  const config = await readConfigFile(FOLDER_PATH)
   if (Array.isArray(config)) {
     config.forEach((table, index, tables) => {
       const { table: tableName, model: modelName, fields, relations } = table
