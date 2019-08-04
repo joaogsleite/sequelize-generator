@@ -1,0 +1,34 @@
+[
+  {
+    "table": "users",
+    "model": "User",
+    "fields": {
+      "name": "String",
+      "email": "String",
+      "password": "String"
+    },
+    "relations": [
+      { "type": "1:n", "model": "Post" }
+    ]
+  },
+  {
+    "table": "posts",
+    "model": "Post",
+    "fields": {
+      "title": "String"
+    },
+    "relations": [
+      { "type": "n:n", "model": "Tag" }
+    ]
+  },
+  {
+    "table": "tags",
+    "model": "Tag",
+    "fields": {
+      "name": "String"
+    },
+    "relations": [
+      { "type": "n:n", "model": "Post" }
+    ]
+  }
+]
