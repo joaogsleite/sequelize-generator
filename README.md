@@ -3,10 +3,11 @@
 
 CLI tool to generate sequelize models based on simple JSON config
 
-## Test
+## Using
 
 ```
 npm start <folder>
 ```
 
-> `<folder>` must contains a `config.json` file like in `example/config.json`
+* `<folder>` must contains a `config.json` file like in `example/config.json`
+* The sequelize models files will be created inside `<folder>`
