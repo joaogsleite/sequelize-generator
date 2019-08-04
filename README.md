@@ -15,7 +15,7 @@ npm start <folder>
 
 ## Example `config.json`
 
-```
+```json
 [
   {
     "table": "users",
